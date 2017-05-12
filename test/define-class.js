@@ -68,4 +68,40 @@ describe('Testing simple define class',() => {
         assert(manager instanceof Manager);
         
     });
+
+    it('#Defining bean not singleton',() => {
+        class Employee{
+            constructor(){}
+
+            get name(){
+                return 'Employee';
+            }
+        }
+
+        safira.define(Employee)
+              .singleton(false);
+
+        let employee1 = safira.bean('employee');
+        let employee2 = safira.bean('employee');
+
+        assert(employee1 !== employee2);
+
+    });
+
+    it('#Defining bean singleton',() => {
+        class Employee{
+            constructor(){}
+
+            get name(){
+                return 'Employee';
+            }
+        }
+
+        safira.define(Employee);
+
+        let employee1 = safira.bean('employee');
+        let employee2 = safira.bean('employee');
+
+        assert(employee1 === employee2);
+    });
 })
