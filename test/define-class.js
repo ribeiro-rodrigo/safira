@@ -104,4 +104,14 @@ describe('Testing simple define class',() => {
 
         assert(employee1 === employee2);
     });
+
+    it('#Looking for non-existent bean',() => {
+        try{
+            safira.bean('house');
+        }
+        catch(e){
+            assert(e.message === 'Bean house not found');
+        }
+        
+    });
 })
