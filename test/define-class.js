@@ -114,4 +114,30 @@ describe('Testing simple define class',() => {
         }
         
     });
+
+    it('#error defining circular reference',() => {
+        class Employee{
+            constructor(departament){
+                this._departament;
+            }
+        }
+
+        class Departament{
+            constructor(employee){
+                this._employee = employee;
+            }
+        }
+
+        safira.define(Employee);
+        safira.define(Departament);
+
+        try{
+            let employee = safira.bean('employee');
+        }
+        catch(e){
+            assert(e.message.indexOf('circular reference?')>-1);
+        }
+
+        
+    });
 })

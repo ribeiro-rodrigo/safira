@@ -101,4 +101,35 @@ describe('Test inject beans and values in field class',() => {
 
         assert(person.age === 28);
     });
+
+    it('#inject dependency without defining ref',() => {
+        class Person{
+            constructor(){}
+
+            set age(age){
+                this._age = age;
+            }
+
+            get age(){
+                return this._age;
+            }
+
+            get animal(){
+                return this._animal;
+            }
+        }
+
+        class Animal{
+            constructor(){}
+        }
+
+        safira.define(Animal);
+
+        try{
+            safira.define(Person)
+                    .inject({refa:'animal'});
+        }catch(e){
+            assert(e.message === 'inject {"refa":"animal"} in Person is not well formatted');
+        }
+    });
 });

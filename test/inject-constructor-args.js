@@ -137,4 +137,31 @@ describe('Test inject beans and values in constructor class ',() => {
         assert(person.name === 'Rodrigo Ribeiro');
         assert(person.age === 28);
     });
+
+    it('#inject dependency without defining ref or value',() => {
+        class Person{
+            constructor(age,name){
+                this._age = age;
+                this._name = name;
+            }
+
+            get age(){
+                return this._age;
+            }
+
+            get name(){
+                return this._name;
+            }
+        }
+        
+        try{
+            safira.define(Person)
+                    .constructorArg({value:28,name:'age'})
+                    .constructorArg({value:'Rodrigo'});
+        }
+        catch(e){
+            assert(e.message === 'constructorArg {"value":"Rodrigo"} in Person is not well formatted');
+        }
+        
+    });
 });
