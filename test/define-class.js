@@ -1,5 +1,5 @@
 let assert = require('assert');
-let safira = require('../lib/Safira');
+let safira = require('../lib/Safira').newContainer();
 
 describe('Testing simple define class',() => {
     it('#defining class',() => {

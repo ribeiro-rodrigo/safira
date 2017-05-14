@@ -1,5 +1,5 @@
 let assert = require('assert');
-let safira = require('../lib/Safira');
+let safira = require('../lib/Safira').newContainer();
 
 describe('Test inject beans and values in constructor class ',() => {
     it("#inject dependency in constructor",() => {
@@ -164,4 +164,4 @@ describe('Test inject beans and values in constructor class ',() => {
         }
         
     });
-});
+}); 
