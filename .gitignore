@@ -13,6 +13,7 @@ target/
 *.classpath
 *.log
 *.iml
+*.tgz
 web-app/WEB-INF/classes/*
 .idea/*
 .settings/*
