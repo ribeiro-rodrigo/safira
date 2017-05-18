@@ -37,6 +37,7 @@ const safira = require('safira');
 let employee = safira.bean('employee');
 console.log(employee.company.name); //Company Name
 ```
+By default all beans built by Safira are singleton, so to change that share, specify the singleton (false) option in the class definition.
 ```javascript
 safira.define(Employee)
       .singleton(false);
