@@ -107,5 +107,67 @@ safira.define(Employee)
       .constructorArg({value:"Michael",name:"firstName"})
 ```
 
+It is also possible to inject dependencies and values directly into the properties of the class.
 
+```javascript
+const safira = require('safira');
 
+class Company{
+  constructor(){
+  }
+  get name(){
+    return 'Company Name'
+  }
+}
+
+safira.define(Company);
+
+class Employee{
+  constructor(){}
+  get employeeCompany(){
+    return this._employeeCompany;
+  }
+  get age(){
+    return this._age;
+  }
+  
+  get firstName(){
+    return this._firstName;
+  }
+}
+
+safira.define(Employee)
+      .inject({ref:"company",name:"_employeeCompany"})
+      .inject({value:28,name:"_age"})
+      .inject({value:"Michael",name:"_firstName"});
+
+```
+
+If the ref value is equal to the class property name, the name property can be omitted. 
+
+```javascript
+const safira = require('safira');
+
+class Company{
+  constructor(){
+  }
+  get name(){
+    return 'Company Name'
+  }
+}
+
+safira.define(Company);
+
+class Employee{
+  constructor(){}
+  get company(){
+    return this._company;
+  }
+  set company(company){
+    this._company = company;
+  }
+}
+
+safira.define(Employee)
+      .inject({ref:"company"});
+```
