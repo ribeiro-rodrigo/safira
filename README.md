@@ -29,6 +29,13 @@ class Company{
   
 safira.define(Company);
 ```
+# Defining objects
+```javascript 
+const safira = require('safira');
+
+let company = {name:"My Company"};
+safira.defineObject(company,'company');
+```
 # Getting beans
 By default the bean will be available through the class name with the first lowercase letter.
 ```javascript 
