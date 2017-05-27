@@ -136,8 +136,97 @@ describe('Testing simple define class',() => {
         }
         catch(e){
             assert(e.message.indexOf('circular reference?')>-1);
+        }    
+    });
+
+    it('#define class and load',() => {
+        
+        let construct = false; 
+        
+        class Person{
+            constructor(){
+                construct = true; 
+            }
         }
 
+        safira.define(Person)
+                .build()
+                    .eager(); 
         
+        assert(construct);
+    }); 
+
+    it('#executing method created after creating object',() => {
+        let created = false; 
+        let construct = false; 
+
+        class Person{
+            constructor(){
+                construct = true; 
+            }
+
+            created(){
+                created = true; 
+            }
+        }
+
+        safira.define(Person);
+        let person = safira.bean('person');
+
+        assert(construct);
+        assert(created);
+    });
+
+    it('#executing postConstruct',() => {
+        let created = false; 
+        let construct = false;
+
+        class Person{
+            constructor(){
+                construct = true
+            }
+
+            myPostConstruct(){
+                created = true; 
+            }
+        }
+
+        safira.define(Person)
+                .postConstruct('myPostConstruct'); 
+
+        let person = safira.bean('person');
+
+        assert(construct);
+        assert(created); 
+
+    });
+
+    it('#ignore method created when defining postConstruct',() => {
+        let created = false; 
+        let postConstruct = false; 
+        let construct = false; 
+
+        class Person{
+            constructor(){
+                construct = true; 
+            }
+
+            created(){
+                created = true; 
+            }
+
+            myPostConstruct(){
+                postConstruct = true; 
+            }
+        }
+
+        safira.define(Person)
+                .postConstruct('myPostConstruct')
+                .build()
+                    .eager();
+
+        assert(construct);
+        assert(!created);
+        assert(postConstruct);
     });
 })
