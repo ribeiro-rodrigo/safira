@@ -229,4 +229,34 @@ describe('Testing simple define class',() => {
         assert(!created);
         assert(postConstruct);
     });
+
+    it('#constructor with space between arguments',() => {
+        class Person{
+            
+        }
+
+        class Departament{
+
+        }
+
+        class OtherClass{
+
+        }
+
+        class Manager{
+            constructor(person, departament, otherClass){
+                this._person = person;
+                this._departament = departament;
+            }
+        }
+
+        safira.define(Person);
+        safira.define(OtherClass);
+        safira.define(Departament);
+        safira.define(Manager);
+
+        let manager = safira.bean('manager');
+
+        assert(manager)
+    });
 })
