@@ -56,6 +56,30 @@ const employee1 = safira.bean('employee');
 const employee2 = safira.bean('employee');
 console.log(employee1 === employee2); //false
 ```
+# Getting class
+Safira allows you to get the class of a bean already declared
+```javascript
+class Animal{
+  constructor(){}
+  get name(){
+    return "Safira";
+  }
+}
+        
+safira.define(Animal);
+
+class Cat extends safira.class('animal'){
+  constructor(){
+    super();
+  }
+}
+
+safira.define(Cat);
+
+let cat = safira.bean('cat');
+
+console.log(cat.name === 'Safira');
+```
 # Loading classes
 By default, safira will create the beans only when needed, ie when a call to safira.bean('beanName') is performed. To change this behavior and create the bean at the time of its setting do as described below.
 ```javascript
@@ -91,7 +115,25 @@ class Animal{
   callbackMethod(){
     console.log('bean created');
   }
-}
+}class Animal{
+            constructor(){}
+
+            get name(){
+                return "Safira";
+            }
+        }
+        safira.define(Animal);
+
+        class Cat extends safira.class('animal'){
+            constructor(){
+                super();
+            }
+        }
+        safira.define(Cat);
+
+        let cat = safira.bean('cat');
+
+        assert(cat.name === 'Safira');
 
 safira.define(Person)
        .build()
@@ -111,7 +153,25 @@ class Company{
   constructor(){
   }
   get name(){
-    return 'Company Name'
+    return 'Company Name'class Animal{
+            constructor(){}
+
+            get name(){
+                return "Safira";
+            }
+        }
+        safira.define(Animal);
+
+        class Cat extends safira.class('animal'){
+            constructor(){
+                super();
+            }
+        }
+        safira.define(Cat);
+
+        let cat = safira.bean('cat');
+
+        assert(cat.name === 'Safira');
   }
 }
 
