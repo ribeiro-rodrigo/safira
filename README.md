@@ -115,25 +115,7 @@ class Animal{
   callbackMethod(){
     console.log('bean created');
   }
-}class Animal{
-            constructor(){}
-
-            get name(){
-                return "Safira";
-            }
-        }
-        safira.define(Animal);
-
-        class Cat extends safira.class('animal'){
-            constructor(){
-                super();
-            }
-        }
-        safira.define(Cat);
-
-        let cat = safira.bean('cat');
-
-        assert(cat.name === 'Safira');
+}
 
 safira.define(Person)
        .build()
@@ -153,25 +135,7 @@ class Company{
   constructor(){
   }
   get name(){
-    return 'Company Name'class Animal{
-            constructor(){}
-
-            get name(){
-                return "Safira";
-            }
-        }
-        safira.define(Animal);
-
-        class Cat extends safira.class('animal'){
-            constructor(){
-                super();
-            }
-        }
-        safira.define(Cat);
-
-        let cat = safira.bean('cat');
-
-        assert(cat.name === 'Safira');
+    return 'Company Name';
   }
 }
 
