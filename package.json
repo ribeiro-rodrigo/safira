@@ -1,6 +1,6 @@
 {
   "name": "safira",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Container IOC for Node.js applications",
   "main": "index.js",
   "scripts": {
