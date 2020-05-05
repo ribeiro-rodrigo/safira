@@ -3,7 +3,7 @@ A library for NodeJS projects that makes it possible to inject dependencies into
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status](https://travis-ci.org/ribeiro-rodrigo/safira.svg?branch=master)](https://travis-ci.org/ribeiro-rodrigo/safira)
+[![Build Status][build-status]][build-url]
 
 # Installation
 ```
@@ -259,3 +259,5 @@ safira.define(Employee)
 [npm-url]: https://npmjs.org/package/safira
 [downloads-image]: https://img.shields.io/npm/dm/safira.svg
 [downloads-url]: https://npmcharts.com/compare/safira?minimal=true
+[build-status]: https://travis-ci.org/ribeiro-rodrigo/safira.svg?branch=master
+[build-url]: https://travis-ci.org/ribeiro-rodrigo/safira  
