@@ -3,6 +3,7 @@ A library for NodeJS projects that makes it possible to inject dependencies into
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
+[![Build Status](https://travis-ci.org/ribeiro-rodrigo/safira.svg?branch=master)](https://travis-ci.org/ribeiro-rodrigo/safira)
 
 # Installation
 ```
