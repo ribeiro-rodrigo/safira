@@ -2,6 +2,7 @@
 A library for NodeJS projects that makes it possible to inject dependencies into Javascript classes written in ES6.
 
 [![NPM Version][npm-image]][npm-url]
+[![NPM Downloads][downloads-image]][downloads-url]
 ---
 
 # Installation
@@ -256,3 +257,5 @@ safira.define(Employee)
 
 [npm-image]: https://img.shields.io/npm/v/safira.svg
 [npm-url]: https://npmjs.org/package/safira
+[downloads-image]: https://img.shields.io/npm/dm/safira.svg
+[downloads-url]: https://npmcharts.com/compare/safira?minimal=true
