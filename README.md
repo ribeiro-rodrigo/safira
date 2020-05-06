@@ -2,6 +2,7 @@
 A library for NodeJS projects that makes it possible to inject dependencies into Javascript classes written in ES6.
 
 [![NPM Version][npm-image]][npm-url]
+---
 
 # Installation
 ```
