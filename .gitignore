@@ -1,4 +1,6 @@
 target/
+.nyc_output/
+coverage/
 *.war
 *.jar
 *.class
