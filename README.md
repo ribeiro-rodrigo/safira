@@ -255,6 +255,8 @@ class Employee{
 safira.define(Employee)
       .inject({ref:"company"});
 ```
+# Learn more
+See a complete example project [here](https://github.com/ribeiro-rodrigo/planet-service)
 
 [npm-image]: https://img.shields.io/npm/v/safira.svg
 [npm-url]: https://npmjs.org/package/safira
